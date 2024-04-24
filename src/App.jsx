@@ -7,13 +7,13 @@ function App() {
     const [number, setNumber] = useState("");
 
     async function getData() {
-        const response = await axios.get("/readFile");
+        const response = await axios.get("/api/readFile");
         setData(response.data.num);
     }
     async function setNewData() {
         axios({
             method: "post",
-            url: "/writeFile",
+            url: "/api/writeFile",
             data: { num: number },
         });
     }
